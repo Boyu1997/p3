@@ -21,7 +21,11 @@ class MasterController extends Controller
 
     public function postText(Request $request) {
 
-        $input = $request->input('number_of_paragraphs');
+        $this->validate($request, [
+            'number_of_paragraph' => 'required|numeric|min:1|max:99'
+        ]);
+
+        $input = $request->input('number_of_paragraph');
 
         $generator = new \Badcow\LoremIpsum\Generator();
         $paragraphs = $generator->getParagraphs($input);
@@ -39,7 +43,20 @@ class MasterController extends Controller
         return view('user', compact('output'));
     }
 
-    public function postUser() {
+    public function postUser(Request $request) {
+
+        require_once '/Fzaninotto/Faker/src/autoload.php';
+        // alternatively, use another PSR-0 compliant autoloader (like the Symfony2 ClassLoader for instance)
+
+        // use the factory to create a Faker\Generator instance
+        $faker = Faker\Factory::create();
+
+        for ($i=0; $i<$request->input('number_of_user'); $i++)
+        {
+
+        }
+
+
 
         $output[1] = 'Submit parameters to generate outcome.';
 

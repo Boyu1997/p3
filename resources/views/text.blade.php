@@ -19,12 +19,15 @@
             <form method="POST" action="/text">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <lable>number of paragraphs:</lable>
-                    <input class="form-control" type="text" name="number_of_paragraphs">
+                    <lable>number of paragraph:</lable>
+                    <input class="form-control" type="text" name="number_of_paragraph">
                 </div>
                 <div class="form-group">
                     <input class="btn btn-primary form-control" type=submit>
                 </div>
+                @foreach($errors->all() as $error)
+                    {{ $error }}<br>
+                @endforeach
             </form>
         </div><!--/.sidebar-offcanvas-->
 

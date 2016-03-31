@@ -19,8 +19,8 @@
             <form method="POST" action="/user">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <lable>number of paragraphs:</lable>
-                    <input class="form-control" type="text" name="number_of_paragraphs">
+                    <lable>number of user:</lable>
+                    <input class="form-control" type="text" name="number_of_user">
                 </div>
                 <div class="form-group">
                     <input class="btn btn-primary form-control" type=submit>
