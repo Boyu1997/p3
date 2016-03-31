@@ -45,7 +45,11 @@ class MasterController extends Controller
 
     public function postUser(Request $request) {
 
-        require_once '/Fzaninotto/Faker/src/autoload.php';
+        $this->validate($request, [
+            'number_of_user' => 'required|numeric|min:1|max:99'
+        ]);
+
+        require_once '/Faker/src/autoload.php';
         // alternatively, use another PSR-0 compliant autoloader (like the Symfony2 ClassLoader for instance)
 
         // use the factory to create a Faker\Generator instance
@@ -53,12 +57,8 @@ class MasterController extends Controller
 
         for ($i=0; $i<$request->input('number_of_user'); $i++)
         {
-
+            $output[$i] = $faker->name.'<br>'.$faker->address.'<br>'.$faker->text;
         }
-
-
-
-        $output[1] = 'Submit parameters to generate outcome.';
 
         return view('user', compact('output'));
     }

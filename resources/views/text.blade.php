@@ -25,9 +25,11 @@
                 <div class="form-group">
                     <input class="btn btn-primary form-control" type=submit>
                 </div>
-                @foreach($errors->all() as $error)
-                    {{ $error }}<br>
-                @endforeach
+                <div>
+                    @foreach($errors->all() as $error)
+                        {{ $error }}<br>
+                    @endforeach
+                </div>
             </form>
         </div><!--/.sidebar-offcanvas-->
 
