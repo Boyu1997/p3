@@ -17,8 +17,8 @@
         <h1>Generating</h1>
         <p class="lead">Here are two commonly used tools as developer's best friend. Press the button and start generating!</p>
         <p>
-            <a class="btn btn-lg btn-success homePageBottton" href="#" role="button">Generate Text</a>
-            <a class="btn btn-lg btn-success homePageBottton" href="#" role="button">Generate User</a>
+            <a class="btn btn-lg btn-success homePageBottton" href="/text" role="button">Generate Text</a>
+            <a class="btn btn-lg btn-success homePageBottton" href="/user" role="button">Generate User</a>
         </p>
     </div>
 
