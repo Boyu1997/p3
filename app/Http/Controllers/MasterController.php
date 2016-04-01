@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
+
+
 
 class MasterController extends Controller
 {
@@ -49,7 +51,8 @@ class MasterController extends Controller
             'number_of_user' => 'required|numeric|min:1|max:99'
         ]);
 
-        require_once '/Faker/src/autoload.php';
+        #require_once '/app/vendor/fzaninotto/faker/src/autoload.php';
+        #require_once '/vendor/fzaninotto/faker/src/autoload.php';
         // alternatively, use another PSR-0 compliant autoloader (like the Symfony2 ClassLoader for instance)
 
         // use the factory to create a Faker\Generator instance
