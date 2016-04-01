@@ -51,16 +51,11 @@ class MasterController extends Controller
             'number_of_user' => 'required|numeric|min:1|max:99'
         ]);
 
-        #require_once '/app/vendor/fzaninotto/faker/src/autoload.php';
-        #require_once '/vendor/fzaninotto/faker/src/autoload.php';
-        // alternatively, use another PSR-0 compliant autoloader (like the Symfony2 ClassLoader for instance)
-
-        // use the factory to create a Faker\Generator instance
-        $faker = Faker\Factory::create();
+        $faker = \Faker\Factory::create();
 
         for ($i=0; $i<$request->input('number_of_user'); $i++)
         {
-            $output[$i] = $faker->name.'<br>'.$faker->address.'<br>'.$faker->text;
+            $output[$i] = '<p>'.$faker->name.'<br>'.$faker->address.'<br>'.$faker->text.'</p>';
         }
 
         return view('user', compact('output'));

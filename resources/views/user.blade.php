@@ -39,7 +39,7 @@
                 </br>
                 <div>
                     @foreach($output as $key => $value)
-                        <p>{{ $value }}</p>
+                        <p>{!! $value !!}</p>
                     @endforeach
                 <div>
             </div>
