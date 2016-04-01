@@ -51,6 +51,7 @@ class MasterController extends Controller
             'number_of_user' => 'required|numeric|min:1|max:99'
         ]);
 
+        
         $faker = \Faker\Factory::create();
 
         for ($i=0; $i<$request->input('number_of_user'); $i++)
